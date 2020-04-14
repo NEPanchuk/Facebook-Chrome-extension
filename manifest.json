@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Facebook friendlist extension",
+  "description": "Get bookmarks lists and use it for friendlist",
+  "version": "0.1",
+  "permissions": [
+    "activeTab", 
+    "storage",
+	"declarativeContent",
+    "https://www.facebook.com/"
+  ],
+  "content_scripts": [
+	{
+	"matches": ["https://www.facebook.com/*/friends*"],
+	"js": ["contentFriends.js"]
+	},
+	{
+	"matches": ["https://www.facebook.com/bookmarks/lists/*"],
+	"js": ["contentFriendsLists.js"]
+	}
+  ]
+}
